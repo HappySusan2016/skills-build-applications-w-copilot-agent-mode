@@ -73,7 +73,15 @@ TEMPLATES = [
 WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 
 
-# Removed DATABASES configuration as mongoengine is used for MongoDB integration
+# Add djongo database engine configuration
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'octofit_db',
+        'HOST': 'localhost',
+        'PORT': 27017,
+    }
+}
 
 # MongoDB configuration using mongoengine
 connect(
